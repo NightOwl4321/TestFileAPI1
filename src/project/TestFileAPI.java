@@ -78,12 +78,12 @@ public class TestFileAPI {
 		assertEquals("..", directory.getParent());
 		
 	}
-//
-//	@Test
-//	public void testGetParent2() {
-//		assertEquals("xxxxxx", readOnlyFile.getParent());
-//	}
-//
+
+	@Test
+	public void testGetParent2() {
+		assertEquals("..", readOnlyFile.getParent());
+	}
+
 //	@Test
 //	public void testGetPath() {
 //		assertEquals("xxxxxx", readOnlyFile.getPath());

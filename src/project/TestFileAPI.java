@@ -14,7 +14,7 @@ public class TestFileAPI {
 	public static File file = new File("../testfile.rtf");
 	public static File directory = new File("../test");
 	public static File unreadableFile = new File("unreadablefile.rtf");
-	public static File readOnlyFile = new File("../../readonlyfile.rtf");
+	public static File readOnlyFile = new File("../readonlyfile.rtf");
 	
 	
 	@Test
@@ -51,31 +51,33 @@ public class TestFileAPI {
 	
 	@Test
 	public void testCanWrite() throws IOException {
-		System.out.println(readOnlyFile.getCanonicalPath());
 		assertTrue(readOnlyFile.exists());
-		//assertFalse(readOnlyFile.canWrite());
+		assertFalse(readOnlyFile.canWrite());
 	}
 	
-//
-//  	@Test
-//	public void testExists1() {
-//		assertTrue(file.exists());
-//	}
-//	
-//	@Test
-//	public void testGetAbsolutePath() {
-//		assertEquals("xxxxxxx", readOnlyFile.getAbsolutePath());
-//	}
-//	
-//	@Test
-//	public void testGetCanonicalPath() throws Exception {
-//		assertEquals("xxxxxxx", readOnlyFile.getCanonicalPath());
-//	}
-//	
-//	@Test
-//	public void testGetParent1() {
-//		assertEquals("xxxxxx", directory.getParent());
-//	}
+
+  	@Test
+	public void testExists1() {
+		assertTrue(file.exists());
+	}
+	
+	@Test
+	public void testGetAbsolutePath() {
+		
+		assertEquals("/Users/workshop/Desktop/TestFileAPI1/../readonlyfile.rtf", readOnlyFile.getAbsolutePath());
+	}
+	
+	@Test
+	public void testGetCanonicalPath() throws Exception {
+		assertEquals("/Users/workshop/Desktop/readonlyfile.rtf", readOnlyFile.getCanonicalPath());
+	}
+	
+	@Test
+	public void testGetParent1() {
+		System.out.println(directory.getParent());
+		assertEquals("..", directory.getParent());
+		
+	}
 //
 //	@Test
 //	public void testGetParent2() {

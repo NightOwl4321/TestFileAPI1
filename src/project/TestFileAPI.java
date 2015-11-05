@@ -74,7 +74,6 @@ public class TestFileAPI {
 	
 	@Test
 	public void testGetParent1() {
-		System.out.println(directory.getParent());
 		assertEquals("..", directory.getParent());
 		
 	}
@@ -89,10 +88,10 @@ public class TestFileAPI {
 //		assertEquals("xxxxxx", readOnlyFile.getPath());
 //	}
 //	
-//	@Test 
-//	public void testGetName() {
-//		assertEquals("xxxxxx",readOnlyFile.getName());
-//	}
+	@Test 
+	public void testGetName() {
+		assertEquals("readonlyfile.rtf",readOnlyFile.getName());
+	}
 //	
 //	@Test
 //	public void testToString() {
